@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "node"
+
+script:
+  # Yarn Tests
+  - yarn test
+
+  # Inferno Tests
+  - rvm install ruby --latest
+  - yarn start &
+  - git clone --single-branch -b development https://github.com/siteadmin/inferno.git
+  - cd inferno
+  - bundle install
+  #- rake inferno:execute[http://localhost:3000,Conformance]
+  - rake inferno:execute_batch[../.inferno.json]

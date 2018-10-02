@@ -1,0 +1,11 @@
+{
+  "server": "http://localhost:3000",
+  "arguments": {
+    "scopes": "launch launch/patient offline_access openid profile user/*.* patient/*.*",
+    "confidential_client": true
+  },
+  "sequences": [
+    "Conformance",
+    "DynamicRegistration"
+  ]
+}
